@@ -1,0 +1,1 @@
+setDefaultObjectEvents("promocode","promocodes",".table","id");

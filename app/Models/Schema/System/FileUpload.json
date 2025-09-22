@@ -1,0 +1,67 @@
+{
+    "fields": {
+        "id": {
+            "type": "bigint",
+            "default": null,
+            "is_nullable": false,
+            "numeric_precision": 20,
+            "numeric_scale": 0
+        },
+        "user_id": {
+            "type": "bigint",
+            "default": null,
+            "is_nullable": true,
+            "numeric_precision": 20,
+            "numeric_scale": 0
+        },
+        "path": {
+            "type": "varchar",
+            "default": null,
+            "is_nullable": false,
+            "max_length": 255
+        },
+        "original_name": {
+            "type": "varchar",
+            "default": null,
+            "is_nullable": false,
+            "max_length": 255
+        },
+        "model": {
+            "type": "varchar",
+            "default": null,
+            "is_nullable": true,
+            "max_length": 255
+        },
+        "model_id": {
+            "type": "bigint",
+            "default": null,
+            "is_nullable": true,
+            "numeric_precision": 19,
+            "numeric_scale": 0
+        },
+        "field_key": {
+            "type": "varchar",
+            "default": null,
+            "is_nullable": true,
+            "max_length": 255
+        },
+        "used": {
+            "type": "tinyint",
+            "default": "0",
+            "is_nullable": false,
+            "numeric_precision": 3,
+            "numeric_scale": 0
+        },
+        "created_at": {
+            "type": "timestamp",
+            "default": null,
+            "is_nullable": true
+        },
+        "updated_at": {
+            "type": "timestamp",
+            "default": null,
+            "is_nullable": true
+        }
+    },
+    "relations": []
+}

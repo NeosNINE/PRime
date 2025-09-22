@@ -1,0 +1,52 @@
+{
+    "fields": {
+        "id": {
+            "type": "bigint",
+            "default": null,
+            "is_nullable": false,
+            "numeric_precision": 20,
+            "numeric_scale": 0
+        },
+        "name": {
+            "type": "varchar",
+            "default": null,
+            "is_nullable": false,
+            "max_length": 255
+        },
+        "key": {
+            "type": "varchar",
+            "default": null,
+            "is_nullable": false,
+            "max_length": 255
+        },
+        "access": {
+            "type": "json",
+            "default": null,
+            "is_nullable": true
+        },
+        "created_at": {
+            "type": "timestamp",
+            "default": null,
+            "is_nullable": true
+        },
+        "updated_at": {
+            "type": "timestamp",
+            "default": null,
+            "is_nullable": true
+        },
+        "deleted_at": {
+            "type": "timestamp",
+            "default": null,
+            "is_nullable": true
+        }
+    },
+    "relations": [
+        {
+            "type": "belongsToMany",
+            "to": "User",
+            "model_func": "users",
+            "service": "App\\Services\\UsersService",
+            "service_func": "users"
+        }
+    ]
+}

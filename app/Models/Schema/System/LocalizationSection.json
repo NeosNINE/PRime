@@ -1,0 +1,75 @@
+{
+    "fields": {
+        "id": {
+            "type": "bigint",
+            "default": null,
+            "is_nullable": false,
+            "numeric_precision": 20,
+            "numeric_scale": 0
+        },
+        "section_id": {
+            "type": "bigint",
+            "default": null,
+            "is_nullable": true,
+            "numeric_precision": 20,
+            "numeric_scale": 0
+        },
+        "name": {
+            "type": "json",
+            "default": null,
+            "is_nullable": true,
+            "max_length": 16777215
+        },
+        "key": {
+            "type": "varchar",
+            "default": null,
+            "is_nullable": false,
+            "max_length": 255
+        },
+        "helper_id": {
+            "type": "int",
+            "default": null,
+            "is_nullable": true,
+            "numeric_precision": 10,
+            "numeric_scale": 0
+        },
+        "helper_section_id": {
+            "type": "int",
+            "default": null,
+            "is_nullable": true,
+            "numeric_precision": 10,
+            "numeric_scale": 0
+        },
+        "created_at": {
+            "type": "timestamp",
+            "default": null,
+            "is_nullable": true
+        },
+        "updated_at": {
+            "type": "timestamp",
+            "default": null,
+            "is_nullable": true
+        },
+        "deleted_at": {
+            "type": "timestamp",
+            "default": null,
+            "is_nullable": true
+        }
+    },
+    "relations": [
+        {
+            "type": "hasMany",
+            "to": "System\\LocalizationSection",
+            "model_func": "sections",
+            "service": "App\\Services\\System\\LocalizationService",
+            "service_func": "localization"
+        },
+        {
+            "type": "belongsTo",
+            "to": "System\\LocalizationSection",
+            "model_func": "section",
+            "service": "App\\Services\\System\\LocalizationService",
+            "service_func": "localization"
+        }
+    ]
+}

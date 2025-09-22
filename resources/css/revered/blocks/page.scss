@@ -1,0 +1,9 @@
+img.avatar {
+    width: 35px;
+    height: 35px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.no-padding table tr td:first-of-type.avatar, .no-padding table tr th:first-of-type.avatar {
+    width: 65px;
+}

@@ -1,0 +1,1 @@
+setDefaultObjectEvents("transaction","payments",".table","id");

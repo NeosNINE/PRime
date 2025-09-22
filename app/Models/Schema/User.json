@@ -1,0 +1,64 @@
+{
+    "fields": {
+        "id": {
+            "type": "bigint",
+            "default": null,
+            "is_nullable": false,
+            "numeric_precision": 20,
+            "numeric_scale": 0
+        },
+        "email": {
+            "type": "varchar",
+            "default": null,
+            "is_nullable": false,
+            "max_length": 255
+        },
+        "avatar": {
+            "type": "varchar",
+            "default": null,
+            "is_nullable": true,
+            "max_length": 255
+        },
+        "email_verified_at": {
+            "type": "timestamp",
+            "default": null,
+            "is_nullable": true
+        },
+        "password": {
+            "type": "varchar",
+            "default": null,
+            "is_nullable": false,
+            "max_length": 255
+        },
+        "last_active_at": {
+            "type": "timestamp",
+            "default": null,
+            "is_nullable": true
+        },
+        "remember_token": {
+            "type": "varchar",
+            "default": null,
+            "is_nullable": true,
+            "max_length": 100
+        },
+        "created_at": {
+            "type": "timestamp",
+            "default": null,
+            "is_nullable": true
+        },
+        "updated_at": {
+            "type": "timestamp",
+            "default": null,
+            "is_nullable": true
+        }
+    },
+    "relations": [
+        {
+            "type": "belongsToMany",
+            "to": "System\\Role",
+            "model_func": "roles",
+            "service": "App\\Services\\System\\RolesService",
+            "service_func": "roles"
+        }
+    ]
+}

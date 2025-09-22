@@ -1,0 +1,62 @@
+.check-lists {
+
+    @extend %unselectable;
+
+    .item {
+
+        display: block;
+
+        input {
+            display: none;
+        }
+
+        .label {
+
+            display: block;
+            padding: 20px;
+            background-color: var(--color-light);
+            border-radius: 5px;
+            border: 2px solid var(--color-light-2);
+
+            &:hover {
+                background-color: var(--color-light-2);
+                cursor: pointer;
+            }
+
+            &:before {
+                content: "\f111";
+                font-family: var(--fa-style-family, "Font Awesome 6 Free");
+                font-weight: var(--fa-style, 900);
+                margin-right: 10px;
+                opacity: 0.5;
+                font-size: 80%;
+            }
+        }
+
+        input:checked + .label {
+
+            background-color: var(--color-light-2);
+            border-color: var(--color-success);
+            color: var(--color-text-green);
+
+            &:before {
+                opacity: 1;
+            }
+
+        }
+
+        input[type=checkbox]:checked + .label {
+
+            &:before {
+                content: "\f00c";
+            }
+
+        }
+
+    }
+
+    .item + .item .label {
+        margin-top: 10px;
+    }
+
+}

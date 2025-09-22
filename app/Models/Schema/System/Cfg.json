@@ -1,0 +1,24 @@
+{
+    "fields": {
+        "id": {
+            "type": "bigint",
+            "default": null,
+            "is_nullable": false,
+            "numeric_precision": 20,
+            "numeric_scale": 0
+        },
+        "key": {
+            "type": "varchar",
+            "default": null,
+            "is_nullable": false,
+            "max_length": 255
+        },
+        "value": {
+            "type": "mediumtext",
+            "default": null,
+            "is_nullable": false,
+            "max_length": 16777215
+        }
+    },
+    "relations": []
+}

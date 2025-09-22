@@ -1,0 +1,46 @@
+.page-header {
+    display: flex;
+    padding: 40px 0 0 0;
+    flex-wrap: wrap;
+
+    h1 {
+        margin: 0 10px 10px 0;
+        color: var(--bg-main-heading);
+        flex-grow: 1;
+        font-size: 24px;
+        font-weight: 500;
+        letter-spacing: 0.01em;
+
+        a {
+            color: var(--color-dark);
+            text-decoration: none;
+
+            &:after {
+                font: var(--fa-font-solid);
+                content: "\f35d";
+                display: inline-block;
+                font-size: 70%;
+                margin-left: 10px;
+                color: var(--bg-main-heading);
+            }
+
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+    }
+
+    .btn {
+        margin-right: 10px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+.back-link ~ .page-header,
+.back-link ~ form .page-header,
+{
+    padding-top: 10px;
+}

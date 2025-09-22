@@ -1,0 +1,1 @@
+setDefaultObjectEvents("user","users",".users-table","email");

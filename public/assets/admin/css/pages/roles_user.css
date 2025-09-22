@@ -1,0 +1,45 @@
+.role_accesses_block {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.role_accesses_block .accesses-line {
+  margin: 10px 0;
+}
+.role_accesses_block .accesses-line .access-name {
+  color: #333;
+  display: block;
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+.role_accesses_block .accesses-line .access-name:hover {
+  cursor: pointer;
+  color: #000;
+}
+.role_accesses_block .accesses-line .access {
+  padding: 5px 10px;
+}
+.role_accesses_block .accesses-line .access input[type=checkbox] {
+  margin-right: 7px;
+}
+.role_accesses_block .accesses-line .access[disabled] {
+  color: #999;
+}
+
+.browse-role-accesses p {
+  margin: 0 0 10px 0;
+  font-size: 14px;
+}
+.browse-role-accesses ul {
+  margin: 0;
+  padding: 0 0 0 10px;
+}
+.browse-role-accesses ul li {
+  list-style-type: none;
+}
+.browse-role-accesses ul li i {
+  margin-right: 3px;
+}

@@ -1,0 +1,340 @@
+// Referral Page Styles
+.referral-page {
+    width: 100%;
+}
+
+// Header Section
+.referral-header {
+    margin-bottom: 2rem;
+    text-align: center;
+
+    @media (min-width: 768px) {
+        text-align: left;
+    }
+}
+
+.referral-title {
+    font-size: clamp(2rem, 5vw, 2.5rem);
+    font-weight: 700;
+    background: var(--brand-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.referral-description {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    line-height: 1.375;
+    max-width: 600px;
+    margin: 0 auto;
+
+    @media (min-width: 768px) {
+        margin: 0;
+    }
+}
+
+// Section Titles
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+}
+
+// Referral Link Section
+.referral-link-section {
+    margin-bottom: 3rem;
+}
+
+.referral-link-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--bg-tertiary);
+    border-radius: var(--radius-xl);
+    padding: 2rem;
+    box-shadow: var(--shadow-md);
+    transition: box-shadow var(--transition-normal);
+
+    &:hover {
+        box-shadow: var(--shadow-lg);
+    }
+}
+
+.referral-link-container {
+    position: relative;
+}
+
+.referral-link-input {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+
+    @media (max-width: 640px) {
+        flex-direction: column;
+    }
+}
+
+.link-field {
+    flex: 1;
+    padding: 1rem 1.25rem;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--bg-tertiary);
+    border-radius: var(--radius-lg);
+    font-family: 'Gilroy', monospace;
+    font-size: 0.875rem;
+    color: var(--text-primary);
+    transition: all var(--transition-fast);
+
+    &:focus {
+        outline: none;
+        border-color: var(--brand-primary);
+        box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+    }
+
+    &:hover {
+        background: var(--bg-primary);
+    }
+}
+
+.copy-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--brand-gradient);
+    color: white;
+    border: none;
+    border-radius: var(--radius-lg);
+    padding: 1rem 1.5rem;
+    font-weight: 600;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    white-space: nowrap;
+
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-lg);
+    }
+
+    &:active {
+        transform: translateY(0);
+    }
+
+    i {
+        font-size: 1rem;
+    }
+}
+
+// Statistics Section
+.referral-stats-section {
+    margin-bottom: 3rem;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+
+    @media (min-width: 768px) {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+.stat-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--bg-tertiary);
+    border-radius: var(--radius-xl);
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    transition: all var(--transition-fast);
+    box-shadow: var(--shadow-sm);
+
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-md);
+        border-color: var(--brand-primary);
+    }
+}
+
+.stat-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--brand-gradient);
+    border-radius: var(--radius-xl);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: var(--shadow-md);
+
+    i {
+        font-size: 1.5rem;
+        color: white;
+    }
+}
+
+.stat-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.stat-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.2;
+    margin-bottom: 0.25rem;
+    font-family: 'Gilroy', monospace;
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+// Rules Section
+.referral-rules-section {
+    margin-bottom: 2rem;
+}
+
+.rules-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.rule-section {
+    background: var(--bg-primary);
+    border: 1px solid var(--bg-tertiary);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    transition: all var(--transition-fast);
+
+    &:hover {
+        box-shadow: var(--shadow-md);
+        border-color: rgba(139, 92, 246, 0.2);
+    }
+}
+
+.rule-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--bg-tertiary);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    &:before {
+        content: '';
+        width: 4px;
+        height: 20px;
+        background: var(--brand-gradient);
+        border-radius: var(--radius-sm);
+        flex-shrink: 0;
+    }
+}
+
+.rule-items {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.rule-item {
+    color: var(--text-secondary);
+    line-height: 1.375;
+    margin: 0;
+    font-size: 0.925rem;
+    padding-left: 1rem;
+    position: relative;
+
+    &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0.6rem;
+        width: 6px;
+        height: 6px;
+        background: var(--brand-primary);
+        border-radius: 50%;
+        opacity: 0.6;
+    }
+
+    // First item has no margin
+    &:first-child {
+        margin-top: 0;
+    }
+}
+
+// Mobile Optimizations
+@media (max-width: 640px) {
+    .referral-link-card,
+    .stat-card {
+        padding: 1.5rem;
+    }
+
+    .section-title {
+        font-size: 1.25rem;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stat-icon {
+        width: 50px;
+        height: 50px;
+
+        i {
+            font-size: 1.25rem;
+        }
+    }
+
+    // Rules section mobile optimizations
+    .rules-content {
+        gap: 1.5rem;
+    }
+
+    .rule-section {
+        padding: 1.25rem;
+    }
+
+    .rule-title {
+        font-size: 1rem;
+
+        &:before {
+            width: 3px;
+            height: 16px;
+        }
+    }
+
+    .rule-item {
+        font-size: 0.875rem;
+        padding-left: 0.875rem;
+
+        &:before {
+            width: 5px;
+            height: 5px;
+            top: 0.55rem;
+        }
+    }
+
+    .stat-value {
+        font-size: 1.75rem;
+    }
+
+    .info-item {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+}

@@ -1,0 +1,90 @@
+<?php
+
+return [
+
+    'methods' => [
+        'cryptomus' => [
+            'name' => 'Cryptomus',
+            'description' => 'Криптовалюты',
+            'icon' => 'assets/images/payment/cryptomus.png',
+            'fee' => 0.5,
+            'auto' => true,
+            'disabled' => false,
+            'pay_currency' => 'usdt',
+        ],
+        'paypal' => [
+            'name' => 'PayPal',
+            'description' => 'Электронные платежи',
+            'icon' => 'assets/images/payment/paypal.png',
+            'fee' => 3.5,
+            'auto' => false,
+            'disabled' => false,
+            'pay_currency' => 'usd',
+        ],
+        'visa' => [
+            'name' => 'VISA',
+            'description' => 'Банковские карты',
+            'icon' => 'assets/images/payment/visa.png',
+            'fee' => 2.9,
+            'auto' => true,
+            'disabled' => false,
+            'pay_currency' => 'usd',
+        ],
+        'mastercard' => [
+            'name' => 'Mastercard',
+            'description' => 'Банковские карты',
+            'icon' => 'assets/images/payment/mastercard.png',
+            'fee' => 2.9,
+            'auto' => true,
+            'disabled' => false,
+            'pay_currency' => 'usd',
+        ],
+        'mir' => [
+            'name' => 'Мир',
+            'description' => 'Карты РФ',
+            'icon' => 'assets/images/payment/mir.png',
+            'fee' => 2.9,
+            'auto' => true,
+            'disabled' => false,
+            'pay_currency' => 'rub',
+        ],
+        'binance' => [
+            'name' => 'BinancePay',
+            'description' => 'Криптоплатежи',
+            'icon' => 'assets/images/payment/binance.png',
+            'fee' => 0.5,
+            'auto' => true,
+            'disabled' => false,
+            'pay_currency' => 'usdt',
+        ],
+        'cryptobot' => [
+            'name' => 'CryptoBot',
+            'description' => 'Telegram бот',
+            'icon' => 'assets/images/payment/cryptobot.png',
+            'fee' => 0.5,
+            'auto' => true,
+            'disabled' => false,
+            'pay_currency' => 'usdt',
+        ],
+        'lolz' => [
+            'name' => 'LOLZ',
+            'description' => 'Форум',
+            'icon' => 'assets/images/payment/lolz.png',
+            'fee' => 1.0,
+            'auto' => false,
+            'disabled' => true,
+            'pay_currency' => 'usd',
+        ],
+        'stripe' => [
+            'name' => 'Stripe',
+            'description' => 'Международные карты',
+            'icon' => 'assets/images/payment/stripe.png',
+            'fee' => 2.9,
+            'auto' => true,
+            'disabled' => false,
+            'pay_currency' => 'usd',
+        ],
+    ],
+];
+
+

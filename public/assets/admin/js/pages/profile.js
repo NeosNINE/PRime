@@ -1,0 +1,1 @@
+initialize((function(){var e=getCurrentTheme(),t=$("[data-theme-choice] input:checked").val();e!==t&&setUpTheme(t)}));

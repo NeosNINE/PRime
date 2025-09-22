@@ -1,0 +1,543 @@
+// Rules Page Styles
+
+// Hero Section
+.rules-hero-section {
+    padding: 6rem 0 4rem;
+    background: linear-gradient(135deg, rgb(248, 250, 255) 0%, rgba(255, 247, 250, 0.9) 25%, rgba(254, 244, 252, 0.95) 50%, rgba(253, 247, 254, 0.9) 75%, rgb(248, 250, 255) 100%);
+    position: relative;
+    overflow: hidden;
+
+    @media (max-width: 768px) {
+        padding: 4rem 0 3rem;
+    }
+
+    [data-theme="dark"] & {
+        background: linear-gradient(135deg, rgb(15, 23, 42) 0%, rgba(25, 20, 35, 0.95) 25%, rgba(20, 15, 30, 0.98) 50%, rgba(25, 20, 35, 0.95) 75%, rgb(15, 23, 42) 100%);
+    }
+
+    // Background pattern/decoration (optional)
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(circle at 20% 80%, rgba(139, 92, 246, 0.05) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 20%, rgba(236, 72, 153, 0.05) 0%, transparent 50%);
+        pointer-events: none;
+    }
+
+    .container {
+        z-index: 2;
+        position: relative;
+    }
+
+    // Rules Hero Background Icons
+    .rules-hero-bg-icons {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        overflow: hidden;
+        z-index: 1;
+    }
+
+    .rules-hero-bg-icon {
+        position: absolute;
+        opacity: 0.2;
+        color: var(--brand-primary);
+        font-size: 2.4rem;
+        line-height: 1;
+        animation: float 8s ease-in-out infinite;
+        z-index: 0;
+
+        &.rules-hero-icon-1 {
+            top: 8%;
+            left: 8%;
+        }
+
+        &.rules-hero-icon-2 {
+            top: 15%;
+            right: 12%;
+        }
+
+        &.rules-hero-icon-3 {
+            top: 25%;
+            left: 25%;
+        }
+
+        &.rules-hero-icon-4 {
+            top: 35%;
+            right: 30%;
+        }
+
+        &.rules-hero-icon-5 {
+            top: 45%;
+            left: 15%;
+        }
+
+        &.rules-hero-icon-6 {
+            top: 55%;
+            right: 20%;
+        }
+
+        @media (max-width: 768px) {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+.rules-hero-content {
+    text-align: center;
+    max-width: 852px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.rules-hero-title {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    background: var(--brand-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: var(--text-primary); // Fallback for browsers that don't support background-clip
+}
+
+.rules-hero-description {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    line-height: 1.375;
+
+    @media (max-width: 768px) {
+        font-size: 1rem;
+    }
+}
+
+// Main Rules Section
+.rules-main-section {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, rgb(248, 250, 255) 0%, rgba(255, 247, 250, 0.9) 25%, rgba(254, 244, 252, 0.95) 50%, rgba(253, 247, 254, 0.9) 75%, rgb(248, 250, 255) 100%);
+    min-height: 80vh;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+
+    [data-theme="dark"] & {
+        background: linear-gradient(135deg, rgb(15, 23, 42) 0%, rgba(25, 20, 35, 0.95) 25%, rgba(20, 15, 30, 0.98) 50%, rgba(25, 20, 35, 0.95) 75%, rgb(15, 23, 42) 100%);
+    }
+
+    // Rules Main Background Icons
+    .rules-main-bg-icons {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        overflow: hidden;
+        z-index: 0;
+    }
+
+    .rules-main-bg-icon {
+        position: absolute;
+        opacity: 0.15;
+        color: var(--brand-primary);
+        font-size: 2.4rem;
+        line-height: 1;
+        animation: float 8s ease-in-out infinite;
+        z-index: 0;
+
+        &.rules-main-icon-1 {
+            top: 8%;
+            left: 8%;
+        }
+
+        &.rules-main-icon-2 {
+            top: 15%;
+            right: 12%;
+        }
+
+        &.rules-main-icon-3 {
+            top: 25%;
+            left: 15%;
+        }
+
+        &.rules-main-icon-4 {
+            top: 35%;
+            right: 30%;
+        }
+
+        &.rules-main-icon-5 {
+            top: 45%;
+            left: 15%;
+        }
+
+        &.rules-main-icon-6 {
+            top: 55%;
+            right: 20%;
+        }
+
+        &.rules-main-icon-7 {
+            bottom: 40%;
+            left: 4%;
+        }
+
+        &.rules-main-icon-8 {
+            bottom: 30%;
+            right: 15%;
+        }
+
+        @media (max-width: 768px) {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+// Tab Content
+.rules-content {
+    position: relative;
+    z-index: 2;
+    min-height: 500px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+// Section Header
+.rules-section-header {
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid rgba(148, 163, 184, 0.2);
+}
+
+.rules-section-header h2 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.rules-update-date {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+// Content Body
+.rules-content-body {
+    max-width: 800px;
+}
+
+// Individual Rule Sections
+.rules-section {
+    margin-bottom: 1rem;
+    padding: 1.5rem 0;
+
+    &:not(:last-child) {
+        border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+    }
+
+    h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: var(--text-primary);
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+
+        &::before {
+            content: '';
+            width: 4px;
+            height: 1.5rem;
+            background: var(--brand-gradient);
+            border-radius: 2px;
+        }
+    }
+
+    h4 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--text-primary);
+        margin-bottom: 0.75rem;
+    }
+
+    p {
+        font-size: 1rem;
+        line-height: 1.375;
+        color: var(--text-secondary);
+        margin-bottom: 1rem;
+    }
+}
+
+// Lists
+.rules-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+        position: relative;
+        padding-bottom: 0.75rem;
+        font-size: 1rem;
+        line-height: 1.375;
+        color: var(--text-secondary);
+
+        &:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        ul {
+            list-style: none;
+            padding-top: 0.75rem;
+            padding-left: 1.5rem;
+        }
+    }
+}
+
+// Warning Box
+.rules-warning-box {
+    display: flex;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: rgba(245, 158, 11, 0.1);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    border-radius: var(--radius-lg);
+    margin: 1.5rem 0;
+
+    @media (max-width: 640px) {
+        gap: 0.75rem;
+        padding: 1.25rem;
+    }
+
+    i {
+        font-size: 1.5rem;
+        color: var(--accent-warning);
+        margin-top: 0.25rem;
+        flex-shrink: 0;
+    }
+
+    div {
+        flex: 1;
+    }
+
+    h4 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--accent-warning);
+        margin-bottom: 0.5rem;
+    }
+
+    p {
+        font-size: 0.95rem;
+        color: var(--text-secondary);
+        margin: 0;
+        line-height: 1.375;
+    }
+
+    [data-theme="dark"] & {
+        background: rgba(245, 158, 11, 0.15);
+        border-color: rgba(245, 158, 11, 0.4);
+    }
+}
+
+// Contact Info
+.rules-contact-info {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1.5rem;
+
+    @media (min-width: 640px) {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem;
+    background: var(--bg-primary);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-fast);
+    cursor: pointer;
+
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-md);
+    }
+
+    i {
+        font-size: 1.25rem;
+        color: var(--brand-primary);
+        width: 1.5rem;
+        text-align: center;
+    }
+
+    span {
+        font-size: 0.95rem;
+        color: var(--text-secondary);
+        font-weight: 500;
+    }
+
+    // Social platform colors
+    &:has(.fa-telegram) i {
+        color: var(--telegram);
+    }
+
+    &:has(.fa-whatsapp) i {
+        color: #25D366;
+    }
+
+    &:has(.fa-envelope) i {
+        color: var(--brand-secondary);
+    }
+}
+
+// Responsive Design Improvements
+@media (max-width: 1024px) {
+    .rules-main-section {
+        padding: 3rem 0;
+    }
+
+    .rules-tabs {
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .rules-hero-section {
+        padding: 3rem 0 2rem;
+    }
+
+    .rules-main-section {
+        padding: 2rem 0;
+    }
+
+    .rules-section-header {
+        margin-bottom: 2rem;
+    }
+
+    .rules-section {
+        h3 {
+            font-size: 1.1rem;
+        }
+    }
+
+    .rules-content-body {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 1rem;
+    }
+
+    .rules-hero-title {
+        margin-bottom: 0.75rem;
+    }
+
+    .rules-hero-description {
+        font-size: 0.95rem;
+    }
+
+    .rules-tabs {
+        padding: 0.25rem;
+    }
+
+    .rules-section {
+        padding: 1rem 0;
+
+        h3 {
+            font-size: 1rem;
+        }
+
+        p {
+            font-size: 0.95rem;
+        }
+    }
+
+    .rules-warning-box {
+        padding: 1rem;
+        gap: 0.5rem;
+
+        i {
+            font-size: 1.25rem;
+        }
+
+        h4 {
+            font-size: 1rem;
+        }
+
+        p {
+            font-size: 0.9rem;
+        }
+    }
+}
+
+// Dark theme adjustments
+[data-theme="dark"] {
+    .rules-tab-button {
+        &:hover {
+            background: rgba(139, 92, 246, 0.15);
+        }
+    }
+
+    .rules-warning-box {
+        background: rgba(245, 158, 11, 0.1);
+        border-color: rgba(245, 158, 11, 0.25);
+    }
+
+    .contact-item {
+        background: var(--bg-tertiary);
+    }
+}
+
+// Print styles (for users who want to print the rules)
+@media print {
+    .rules-hero-section,
+    .rules-tabs {
+        display: none;
+    }
+
+    .rules-section {
+        page-break-inside: avoid;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .rules-warning-box {
+        border: 2px solid #f59e0b;
+        background: #fef3c7;
+    }
+}
+
+// Animation for floating icons
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    33% {
+        transform: translateY(-15px) rotate(2deg);
+    }
+    66% {
+        transform: translateY(-8px) rotate(-1deg);
+    }
+}
+
+

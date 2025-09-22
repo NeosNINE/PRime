@@ -1,0 +1,94 @@
+{
+    "fields": {
+        "id": {
+            "type": "bigint",
+            "default": null,
+            "is_nullable": false,
+            "numeric_precision": 20,
+            "numeric_scale": 0
+        },
+        "email": {
+            "type": "varchar",
+            "default": null,
+            "is_nullable": true,
+            "max_length": 255
+        },
+        "user_id": {
+            "type": "bigint",
+            "default": null,
+            "is_nullable": true,
+            "numeric_precision": 20,
+            "numeric_scale": 0
+        },
+        "subject": {
+            "type": "varchar",
+            "default": null,
+            "is_nullable": true,
+            "max_length": 255
+        },
+        "text": {
+            "type": "mediumtext",
+            "default": null,
+            "is_nullable": true,
+            "max_length": 16777215
+        },
+        "text_plain": {
+            "type": "mediumtext",
+            "default": null,
+            "is_nullable": true,
+            "max_length": 16777215
+        },
+        "type": {
+            "type": "varchar",
+            "default": "other",
+            "is_nullable": false,
+            "max_length": 255
+        },
+        "status": {
+            "type": "enum",
+            "default": "sending",
+            "is_nullable": false,
+            "max_length": 7
+        },
+        "key": {
+            "type": "varchar",
+            "default": null,
+            "is_nullable": true,
+            "max_length": 255
+        },
+        "sent_date": {
+            "type": "timestamp",
+            "default": null,
+            "is_nullable": true
+        },
+        "data": {
+            "type": "json",
+            "default": null,
+            "is_nullable": true
+        },
+        "created_at": {
+            "type": "timestamp",
+            "default": null,
+            "is_nullable": true
+        },
+        "updated_at": {
+            "type": "timestamp",
+            "default": null,
+            "is_nullable": true
+        },
+        "deleted_at": {
+            "type": "timestamp",
+            "default": null,
+            "is_nullable": true
+        }
+    },
+    "relations": [
+        {
+            "type": "belongsTo",
+            "to": "User",
+            "model_func": "user",
+            "service": "App\\Services\\UsersService",
+            "service_func": "users"
+        }
+    ]
+}

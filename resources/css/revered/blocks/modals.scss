@@ -1,0 +1,94 @@
+.modal-backdrop.show {
+    opacity: 0.7;
+}
+.modal-page-content {
+    background: var(--color-light-2);
+    padding: 30px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-clip: padding-box;
+    border-radius: 0.3rem;
+    outline: 0;
+
+    .page-header {
+        padding-top: 0;
+    }
+
+    &.only-form {
+        padding: 0;
+
+        .box {
+            margin-top: 0;
+        }
+
+        .box-header, .box-footer {
+            background: var(--color-light-2);
+        }
+
+    }
+
+}
+
+.modal-page-content-hidden {
+    display: none;
+}
+
+.modal-dialog:not(.modal-fullscreen) .modal-page-content,
+.offcanvas .modal-page-content {
+
+    .w-25, .w-50, .w-75, .w-100 {
+        width: 100% !important;
+    }
+
+}
+.modal-content {
+    background-color: var(--color-light-2);
+
+    .modal-header {
+        border-bottom: none;
+    }
+
+    .modal-page-content {
+        padding-top: 0;
+    }
+}
+.offcanvas {
+
+    background-color: var(--color-light-2);
+    --bs-offcanvas-width: 600px;
+    --bs-offcanvas-height: 40vh;
+
+    &.small {
+        --bs-offcanvas-width: 400px;
+        --bs-offcanvas-height: 30vh;
+    }
+    &.large {
+        --bs-offcanvas-width: 800px;
+        --bs-offcanvas-height: 50vh;
+    }
+    &.huge {
+        --bs-offcanvas-width: 1100px;
+        --bs-offcanvas-height: 70vh;
+    }
+    &.very-huge {
+        --bs-offcanvas-width: 1400px;
+        --bs-offcanvas-height: 70vh;
+    }
+    &.almost-fullscreen {
+        --bs-offcanvas-width: 1800px;
+        --bs-offcanvas-height: 70vh;
+
+        .container {
+            max-width: 100%;
+        }
+    }
+
+    .offcanvas-body {
+        .modal-page-content {
+            padding-top: 0;
+        }
+    }
+}
