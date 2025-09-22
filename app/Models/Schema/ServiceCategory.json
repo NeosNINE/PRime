@@ -1,0 +1,45 @@
+{
+    "fields": {
+        "id": {
+            "type": "bigint",
+            "default": null,
+            "is_nullable": false,
+            "numeric_precision": 20,
+            "numeric_scale": 0
+        },
+        "provider_id": {
+            "type": "bigint",
+            "default": null,
+            "is_nullable": true,
+            "numeric_precision": 20,
+            "numeric_scale": 0
+        },
+        "name": {
+            "type": "varchar",
+            "default": null,
+            "is_nullable": false,
+            "max_length": 255
+        },
+        "is_manual_only": {
+            "type": "tinyint",
+            "default": 0,
+            "is_nullable": false
+        },
+        "is_active": {
+            "type": "tinyint",
+            "default": 1,
+            "is_nullable": false
+        },
+        "created_at": {
+            "type": "timestamp",
+            "default": null,
+            "is_nullable": true
+        },
+        "updated_at": {
+            "type": "timestamp",
+            "default": null,
+            "is_nullable": true
+        }
+    },
+    "relations": []
+}

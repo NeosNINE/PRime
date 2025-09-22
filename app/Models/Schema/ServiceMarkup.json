@@ -1,0 +1,63 @@
+{
+    "fields": {
+        "id": {
+            "type": "bigint",
+            "default": null,
+            "is_nullable": false,
+            "numeric_precision": 20,
+            "numeric_scale": 0
+        },
+        "scope": {
+            "type": "varchar",
+            "default": null,
+            "is_nullable": false,
+            "max_length": 32
+        },
+        "provider_id": {
+            "type": "bigint",
+            "default": null,
+            "is_nullable": true,
+            "numeric_precision": 20,
+            "numeric_scale": 0
+        },
+        "service_category_id": {
+            "type": "bigint",
+            "default": null,
+            "is_nullable": true,
+            "numeric_precision": 20,
+            "numeric_scale": 0
+        },
+        "service_id": {
+            "type": "bigint",
+            "default": null,
+            "is_nullable": true,
+            "numeric_precision": 20,
+            "numeric_scale": 0
+        },
+        "percent": {
+            "type": "decimal",
+            "default": null,
+            "is_nullable": true,
+            "numeric_precision": 12,
+            "numeric_scale": 4
+        },
+        "fixed": {
+            "type": "decimal",
+            "default": null,
+            "is_nullable": true,
+            "numeric_precision": 16,
+            "numeric_scale": 4
+        },
+        "created_at": {
+            "type": "timestamp",
+            "default": null,
+            "is_nullable": true
+        },
+        "updated_at": {
+            "type": "timestamp",
+            "default": null,
+            "is_nullable": true
+        }
+    },
+    "relations": []
+}

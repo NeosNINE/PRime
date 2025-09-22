@@ -118,6 +118,27 @@ class AdminService extends Service
                 'access' => 'users.*'
             ],
             [
+                'text' => 'Провайдеры',
+                'href' => route('admin.providers.browse'),
+                'active_route_prefix' => 'admin.providers',
+                'icon' => 'fa fa-plug',
+                'access' => 'providers.*'
+            ],
+            [
+                'text' => 'Услуги',
+                'href' => route('admin.services.browse'),
+                'active_route_prefix' => 'admin.services',
+                'icon' => 'fa fa-list',
+                'access' => 'services.*'
+            ],
+            [
+                'text' => 'Заказы',
+                'href' => route('admin.orders.browse'),
+                'active_route_prefix' => 'admin.orders',
+                'icon' => 'fa fa-shopping-cart',
+                'access' => 'orders.*'
+            ],
+            [
                 'text' => 'Платежи',
                 'href' => route('admin.payments.browse'),
                 'active_route_prefix' => 'admin.payments',

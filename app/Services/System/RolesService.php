@@ -51,6 +51,31 @@ class RolesService extends Service
             'impersonate' => 'Возможность авторизоваться за другого пользователя'
         ]);
 
+        $accesses['providers'] = $this->getBREADAccesses('Провайдеры услуг', 'providers', [
+            'browse' => 'Просмотр списка провайдеров',
+            'read' => 'Просмотр информации о провайдере',
+            'add' => 'Добавление провайдеров',
+            'edit' => 'Редактирование провайдеров',
+        ]);
+
+        $accesses['services'] = $this->getBREADAccesses('Услуги', 'services', [
+            'browse' => 'Просмотр списка услуг',
+            'read' => 'Просмотр информации об услуге',
+            'add' => 'Добавление услуг',
+            'edit' => 'Редактирование услуг',
+            'delete' => 'Удаление услуг',
+        ]);
+
+        $accesses['orders'] = [
+            'name' => 'Заказы',
+            'accesses' => [
+                'orders.browse' => ['name' => 'Просмотр списка заказов'],
+                'orders.read' => ['name' => 'Просмотр деталей заказа', 'if_specified' => 'orders.browse'],
+                'orders.edit' => ['name' => 'Управление статусами ручных заказов', 'if_specified' => 'orders.read'],
+                'orders.export' => ['name' => 'Экспорт заказов', 'if_specified' => 'orders.browse'],
+            ],
+        ];
+
         $accesses['roles'] = $this->getBREADAccesses('Роли', 'roles', [
             'browse' => 'Просмотр списка ролей',
             'add' => 'Добавление новых ролей',

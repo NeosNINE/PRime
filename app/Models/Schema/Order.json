@@ -1,0 +1,131 @@
+{
+    "fields": {
+        "id": {
+            "type": "bigint",
+            "default": null,
+            "is_nullable": false,
+            "numeric_precision": 20,
+            "numeric_scale": 0
+        },
+        "user_id": {
+            "type": "bigint",
+            "default": null,
+            "is_nullable": false,
+            "numeric_precision": 20,
+            "numeric_scale": 0
+        },
+        "service_id": {
+            "type": "bigint",
+            "default": null,
+            "is_nullable": false,
+            "numeric_precision": 20,
+            "numeric_scale": 0
+        },
+        "provider_id": {
+            "type": "bigint",
+            "default": null,
+            "is_nullable": true,
+            "numeric_precision": 20,
+            "numeric_scale": 0
+        },
+        "external_id": {
+            "type": "varchar",
+            "default": null,
+            "is_nullable": true,
+            "max_length": 255
+        },
+        "link": {
+            "type": "text",
+            "default": null,
+            "is_nullable": false
+        },
+        "quantity": {
+            "type": "int",
+            "default": null,
+            "is_nullable": false
+        },
+        "price": {
+            "type": "decimal",
+            "default": "0.0000",
+            "is_nullable": false,
+            "numeric_precision": 16,
+            "numeric_scale": 4
+        },
+        "cost_price": {
+            "type": "decimal",
+            "default": "0.0000",
+            "is_nullable": false,
+            "numeric_precision": 16,
+            "numeric_scale": 4
+        },
+        "status": {
+            "type": "varchar",
+            "default": "pending",
+            "is_nullable": false,
+            "max_length": 64
+        },
+        "is_drip_feed": {
+            "type": "tinyint",
+            "default": 0,
+            "is_nullable": false
+        },
+        "drip_runs": {
+            "type": "int",
+            "default": null,
+            "is_nullable": true
+        },
+        "drip_interval_minutes": {
+            "type": "int",
+            "default": null,
+            "is_nullable": true
+        },
+        "drip_runs_processed": {
+            "type": "int",
+            "default": 0,
+            "is_nullable": false
+        },
+        "is_manual": {
+            "type": "tinyint",
+            "default": 0,
+            "is_nullable": false
+        },
+        "completed_at": {
+            "type": "timestamp",
+            "default": null,
+            "is_nullable": true
+        },
+        "failed_at": {
+            "type": "timestamp",
+            "default": null,
+            "is_nullable": true
+        },
+        "refunded_at": {
+            "type": "timestamp",
+            "default": null,
+            "is_nullable": true
+        },
+        "refunded_amount": {
+            "type": "decimal",
+            "default": null,
+            "is_nullable": true,
+            "numeric_precision": 16,
+            "numeric_scale": 4
+        },
+        "meta": {
+            "type": "json",
+            "default": null,
+            "is_nullable": true
+        },
+        "created_at": {
+            "type": "timestamp",
+            "default": null,
+            "is_nullable": true
+        },
+        "updated_at": {
+            "type": "timestamp",
+            "default": null,
+            "is_nullable": true
+        }
+    },
+    "relations": []
+}

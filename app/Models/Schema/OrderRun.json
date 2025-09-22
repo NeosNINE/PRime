@@ -1,0 +1,60 @@
+{
+    "fields": {
+        "id": {
+            "type": "bigint",
+            "default": null,
+            "is_nullable": false,
+            "numeric_precision": 20,
+            "numeric_scale": 0
+        },
+        "order_id": {
+            "type": "bigint",
+            "default": null,
+            "is_nullable": false,
+            "numeric_precision": 20,
+            "numeric_scale": 0
+        },
+        "run_number": {
+            "type": "int",
+            "default": null,
+            "is_nullable": false
+        },
+        "quantity": {
+            "type": "int",
+            "default": null,
+            "is_nullable": false
+        },
+        "status": {
+            "type": "varchar",
+            "default": "pending",
+            "is_nullable": false,
+            "max_length": 64
+        },
+        "scheduled_for": {
+            "type": "timestamp",
+            "default": null,
+            "is_nullable": true
+        },
+        "dispatched_at": {
+            "type": "timestamp",
+            "default": null,
+            "is_nullable": true
+        },
+        "completed_at": {
+            "type": "timestamp",
+            "default": null,
+            "is_nullable": true
+        },
+        "created_at": {
+            "type": "timestamp",
+            "default": null,
+            "is_nullable": true
+        },
+        "updated_at": {
+            "type": "timestamp",
+            "default": null,
+            "is_nullable": true
+        }
+    },
+    "relations": []
+}
