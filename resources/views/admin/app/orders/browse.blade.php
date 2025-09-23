@@ -15,7 +15,7 @@
                         'style' => 'secondary',
                         'icon' => 'fa fa-download',
                         'text' => 'Экспорт CSV',
-                        'access' => 'orders.browse'
+                        'access' => 'orders.export'
                     ]
                 ]) !!}
             </div>

@@ -9,6 +9,7 @@ use App\Models\System\Role;
 use App\Models\User;
 use Database\Seeders\FirstInitSeeder;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Str;
 use Tests\TestCase;
 
 class OrdersManagementTest extends TestCase
@@ -60,11 +61,36 @@ class OrdersManagementTest extends TestCase
         $this->assertSame(10.0, (float) $user->balance);
     }
 
+    public function test_orders_export_requires_dedicated_permission(): void
+    {
+        $restrictedUser = $this->createUserWithAccess(['orders.browse']);
+        $this->actingAs($restrictedUser);
+
+        $this->get(route('admin.orders.export'))->assertStatus(403);
+
+        $this->actingAs($this->createAdmin());
+        $this->get(route('admin.orders.export'))->assertOk();
+    }
+
     private function createAdmin(): User
     {
         $user = User::factory()->create();
         $roleId = Role::query()->where('key', 'super_admin')->value('id');
         $user->roles()->attach($roleId);
+
+        return $user;
+    }
+
+    private function createUserWithAccess(array $access): User
+    {
+        $role = Role::query()->forceCreate([
+            'name' => 'Temp role',
+            'key' => 'temp_role_' . Str::random(6),
+            'access' => $access,
+        ]);
+
+        $user = User::factory()->create();
+        $user->roles()->attach($role->id);
 
         return $user;
     }

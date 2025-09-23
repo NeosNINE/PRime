@@ -64,7 +64,7 @@ class AdminOrdersController extends Controller
 
     public function export(Request $request)
     {
-        roles()->checkAccessWithAbort('orders.browse');
+        roles()->checkAccessWithAbort('orders.export');
 
         $data = $this->orders->export($request->all());
 

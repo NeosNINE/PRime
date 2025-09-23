@@ -116,7 +116,7 @@ class ServicesService extends Service
             }
 
             if (array_key_exists('is_active', $data)) {
-                $service->is_active = (bool) $data['is_active'];
+                $this->syncAdminDisableFlag($service, (bool) $data['is_active']);
             }
 
             $service->save();
@@ -127,7 +127,19 @@ class ServicesService extends Service
 
     public function bulkSetStatus(array $ids, bool $active): int
     {
-        return ServiceModel::query()->whereIn('id', $ids)->update(['is_active' => $active]);
+        $services = ServiceModel::query()->whereIn('id', $ids)->get();
+        $updated = 0;
+
+        foreach ($services as $service) {
+            $this->syncAdminDisableFlag($service, $active);
+
+            if ($service->isDirty(['is_active', 'meta'])) {
+                $service->save();
+                $updated++;
+            }
+        }
+
+        return $updated;
     }
 
     public function delete(ServiceModel $service): void
@@ -162,5 +174,19 @@ class ServicesService extends Service
             'is_manual_only' => true,
             'is_active' => true,
         ]);
+}
+
+    private function syncAdminDisableFlag(ServiceModel $service, bool $active): void
+    {
+        $meta = is_array($service->meta) ? $service->meta : [];
+
+        if ($active) {
+            unset($meta['admin_disabled']);
+        } else {
+            $meta['admin_disabled'] = true;
+        }
+
+        $service->meta = $meta;
+        $service->is_active = $active;
     }
 }

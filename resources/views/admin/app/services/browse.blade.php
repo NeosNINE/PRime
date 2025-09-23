@@ -135,7 +135,7 @@
                             <label class="form-label">Услуга</label>
                             <select name="service_id" class="form-select select2">
                                 <option value="">---</option>
-                                @foreach($services as $serviceItem)
+                                @foreach($allServices as $serviceItem)
                                     <option value="{{ $serviceItem->id }}">{{ $serviceItem->name }}</option>
                                 @endforeach
                             </select>

@@ -49,9 +49,20 @@ class ServiceImporter
                 $service->max_quantity = $remoteService->max;
                 $service->cost_price = $remoteService->ratePer1000;
                 $service->is_manual = false;
-                $service->is_active = true;
                 $meta = is_array($service->meta) ? $service->meta : [];
+
+                $providerIsActive = (bool) ($remoteService->meta['is_active'] ?? true);
                 $meta['provider_payload'] = $remoteService->meta;
+                $meta['provider_is_active'] = $providerIsActive;
+
+                $wasAdminDisabled = (bool) ($meta['admin_disabled'] ?? false);
+
+                if (!$service->exists) {
+                    $service->is_active = $providerIsActive;
+                } elseif (!$wasAdminDisabled) {
+                    $service->is_active = $providerIsActive;
+                }
+
                 $service->meta = $meta;
 
                 $service->price = $this->pricingService->calculatePrice($service, $service->cost_price);

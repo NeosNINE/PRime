@@ -422,7 +422,7 @@ class RolesService extends Service
     {
 
         //Скрипт запущенный из консоли имеет все доступы
-        if( app()->runningInConsole() )
+        if( app()->runningInConsole() && !app()->runningUnitTests() )
             return true;
 
         $cache_key = 'checkAccess' . implode('',(array)$access_keys) . ($user->id ?? 0) . $all_accesses_mode;

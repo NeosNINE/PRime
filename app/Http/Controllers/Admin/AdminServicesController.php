@@ -41,8 +41,11 @@ class AdminServicesController extends Controller
 
         $services = $this->services->list($filters);
 
+        $allServices = Service::orderBy('name')->get();
+
         return view('admin.app.services.browse', [
             'services' => $services,
+            'allServices' => $allServices,
             'filters' => $filters,
             'providers' => Provider::orderBy('name')->get(),
             'categories' => ServiceCategory::orderBy('name')->get(),
