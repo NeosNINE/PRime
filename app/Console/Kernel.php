@@ -17,6 +17,8 @@ class Kernel extends ConsoleKernel
     {
         $schedule->command('queue:retry all')->everyMinute();
         $schedule->command('check:queue --restart')->everyFiveMinutes();
+        $schedule->command('providers:sync-balances --queue')->everyTenMinutes();
+        $schedule->command('providers:sync-services --queue')->hourly();
     }
 
     /**

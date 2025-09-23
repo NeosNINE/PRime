@@ -9,6 +9,9 @@ use App\Http\Controllers\Admin\AdminPaymentsController;
 use App\Http\Controllers\Admin\AdminEmailsController;
 use App\Http\Controllers\Admin\AdminPromoCodesController;
 use App\Http\Controllers\Admin\AdminLogsController;
+use App\Http\Controllers\Admin\AdminProvidersController;
+use App\Http\Controllers\Admin\AdminServicesController;
+use App\Http\Controllers\Admin\AdminOrdersController;
 use App\Http\Controllers\Admin\AdminLocalizationController;
 use App\Http\Controllers\Admin\AdminProfileController;
 
@@ -62,6 +65,42 @@ Route::prefix('admin')->name('admin.')->group(function(){
         Route::get('{transaction}', 'read')->name('read');
         Route::post('{transaction}/accept', 'accept')->name('accept');
         Route::post('{transaction}/refund', 'refund')->name('refund');
+    });
+
+    //Провайдеры
+    Route::name('providers.')->controller(AdminProvidersController::class)->group(function(){
+        Route::get('providers', 'browse')->name('browse');
+        Route::get('provider/add', 'add')->name('add');
+        Route::post('provider/add', 'addSave')->name('add.save');
+        Route::get('provider/{provider}', 'read')->name('read');
+        Route::get('provider/edit/{provider}', 'edit')->name('edit');
+        Route::put('provider/edit/{provider}', 'editSave')->name('edit.save');
+        Route::post('provider/{provider}/activate', 'activate')->name('activate');
+        Route::post('provider/{provider}/deactivate', 'deactivate')->name('deactivate');
+        Route::post('provider/{provider}/sync-balance', 'syncBalance')->name('sync_balance');
+    });
+
+    //Услуги
+    Route::name('services.')->controller(AdminServicesController::class)->group(function(){
+        Route::get('services', 'browse')->name('browse');
+        Route::get('service/add', 'add')->name('add');
+        Route::post('service/add', 'addSave')->name('add.save');
+        Route::get('service/{service}', 'read')->name('read');
+        Route::get('service/edit/{service}', 'edit')->name('edit');
+        Route::put('service/edit/{service}', 'editSave')->name('edit.save');
+        Route::post('services/bulk', 'bulk')->name('bulk');
+        Route::delete('service/{service}', 'delete')->name('delete');
+        Route::post('services/provider/{provider}/sync', 'syncProvider')->name('sync_provider');
+        Route::post('services/markups', 'saveMarkup')->name('markups.save');
+        Route::delete('services/markups/{markup}', 'deleteMarkup')->name('markups.delete');
+    });
+
+    //Заказы
+    Route::name('orders.')->controller(AdminOrdersController::class)->group(function(){
+        Route::get('orders', 'browse')->name('browse');
+        Route::get('orders/export', 'export')->name('export');
+        Route::get('order/{order}', 'read')->name('read');
+        Route::put('order/{order}/status', 'updateStatus')->name('update_status');
     });
 
     //Промокоды

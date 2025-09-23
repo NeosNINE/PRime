@@ -15,6 +15,18 @@ $app = new Illuminate\Foundation\Application(
     $_ENV['APP_BASE_PATH'] ?? dirname(__DIR__)
 );
 
+$detectedEnvironment = $_ENV['APP_ENV'] ?? $_SERVER['APP_ENV'] ?? null;
+
+if ($detectedEnvironment === 'testing') {
+    $testingEnvironmentFile = '.env.testing';
+
+    $testingPath = $app->environmentPath().DIRECTORY_SEPARATOR.$testingEnvironmentFile;
+
+    if (is_file($testingPath)) {
+        $app->loadEnvironmentFrom($testingEnvironmentFile);
+    }
+}
+
 /*
 |--------------------------------------------------------------------------
 | Bind Important Interfaces

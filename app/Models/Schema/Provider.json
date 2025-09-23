@@ -1,0 +1,90 @@
+{
+    "fields": {
+        "id": {
+            "type": "bigint",
+            "default": null,
+            "is_nullable": false,
+            "numeric_precision": 20,
+            "numeric_scale": 0
+        },
+        "name": {
+            "type": "varchar",
+            "default": null,
+            "is_nullable": false,
+            "max_length": 255
+        },
+        "driver": {
+            "type": "varchar",
+            "default": null,
+            "is_nullable": false,
+            "max_length": 255
+        },
+        "api_url": {
+            "type": "varchar",
+            "default": null,
+            "is_nullable": false,
+            "max_length": 255
+        },
+        "api_key": {
+            "type": "text",
+            "default": null,
+            "is_nullable": false
+        },
+        "is_active": {
+            "type": "tinyint",
+            "default": 1,
+            "is_nullable": false
+        },
+        "balance": {
+            "type": "decimal",
+            "default": "0.0000",
+            "is_nullable": false,
+            "numeric_precision": 16,
+            "numeric_scale": 4
+        },
+        "currency": {
+            "type": "varchar",
+            "default": "USD",
+            "is_nullable": false,
+            "max_length": 8
+        },
+        "last_synced_at": {
+            "type": "timestamp",
+            "default": null,
+            "is_nullable": true
+        },
+        "services_last_synced_at": {
+            "type": "timestamp",
+            "default": null,
+            "is_nullable": true
+        },
+        "low_balance_threshold": {
+            "type": "decimal",
+            "default": null,
+            "is_nullable": true,
+            "numeric_precision": 16,
+            "numeric_scale": 4
+        },
+        "last_balance_notification_at": {
+            "type": "timestamp",
+            "default": null,
+            "is_nullable": true
+        },
+        "meta": {
+            "type": "json",
+            "default": null,
+            "is_nullable": true
+        },
+        "created_at": {
+            "type": "timestamp",
+            "default": null,
+            "is_nullable": true
+        },
+        "updated_at": {
+            "type": "timestamp",
+            "default": null,
+            "is_nullable": true
+        }
+    },
+    "relations": []
+}
